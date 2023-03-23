@@ -10,4 +10,5 @@ sudo apt install sway swaylock swayidle
 ## Installation of Dependencies
 
 ```shell
+sudo apt install rofi
 ```

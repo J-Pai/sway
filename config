@@ -18,7 +18,8 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu rofi -show
 
 include /etc/sway/config-vars.d/*
 
@@ -80,7 +81,11 @@ output * bg #444444 solid_color
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    # bindsym $mod+d exec $menu
+    bindsym $mod+g exec $menu window
+    bindsym $mod+d exec $menu run
+    bindsym $mod+Shift+d exec $menu drun
+    bindsym $mod+b exec $menu filebrowser
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
