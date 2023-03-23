@@ -12,3 +12,33 @@ sudo apt install sway swaylock swayidle
 ```shell
 sudo apt install rofi
 ```
+
+## Google Internal
+
+Set up `SSH_AUTH_SOCK`.
+
+```
+mkdir -p ~/.config/environment.d
+touch ~/.config/environment.d/envvars.conf
+
+```
+
+Add the following to `envvars.conf`.
+
+```shell
+SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/ssh-agent.socket
+```
+
+Create a `60-google.conf` file.
+
+```shell
+sudo touch /etc/sway/config.d/60-google.conf
+```
+
+Add the following to the newly create `60-google.conf` file.
+
+```shell
+exec "ssh-agent -a $SSH_AUTH_SOCK"
+exec nm-applet --indicator
+exec env XDG_CURRENT_DESKTOP=gnome /usr/share/goobuntu-indicator/goobuntu_indicator.py
+```
