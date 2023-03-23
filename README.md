@@ -13,6 +13,12 @@ sudo apt install sway swaylock swayidle
 sudo apt install rofi
 ```
 
+### Volume Control
+
+```shell
+git clone https://github.com/hastinbe/i3-volume.git ~/.config/i3-volume
+```
+
 ## Google Internal
 
 Set up `SSH_AUTH_SOCK`.
