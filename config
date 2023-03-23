@@ -231,3 +231,5 @@ bar {
 }
 
 include /etc/sway/config.d/*
+
+exec "ssh-agent -a $SSH_AUTH_SOCK"
