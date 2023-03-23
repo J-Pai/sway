@@ -99,6 +99,9 @@ output * bg #444444 solid_color
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    # Lock screen
+    bindsym $mod+Shift+x exec --no-startup-id swaylock --color "#696969"
 #
 # Moving around:
 #
