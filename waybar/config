@@ -83,8 +83,8 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%Y-%m-%d %H:%M:%S}",
-        "interval": 1,
+        "format": "{:%Y-%m-%d %H:%M}",
+        "interval": 60,
     },
     "cpu": {
         "format": "{usage}% ",
