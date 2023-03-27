@@ -30,14 +30,9 @@ markup=none
 
 # Volume indicator
 #
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
-[volume]
-label=VOL
-#label=♪
-#instance=Master
-#instance=PCM
+# Script pulled from vivien/i3blocks-contrib
+[volume-pipewire]
+command=$HOME/.config/i3blocks-contrib/volume-pipewire/volume-pipewire
 interval=once
 signal=10
 
