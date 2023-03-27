@@ -63,9 +63,8 @@ profile "multiple" {
 	output HDMI-A-1 mode 2560x1440@59.951Hz position 0,0
 }
 
-profile "multiple" {
+profile "internal" {
 	output eDP-1 mode 1920x1080@59.934Hz position 2560,0
-	output HDMI-A-1 mode 2560x1440@59.951Hz position 0,0
 }
 ```
 
