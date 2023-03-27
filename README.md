@@ -15,9 +15,11 @@ sudo apt install rofi i3blocks kanshi jq
 
 ```shell
 mkdir -p ~/.config/kanshi && touch ~/.config/kanshi/config
-git clone https://github.com/vivien/i3blocks-contrib.git ~/.config/i3blocks-contrib
+git clone git@github.com:J-Pai/i3blocks-contrib.git ~/.config/i3blocks-contrib
 ln -s ~/.config/sway/i3blocks ~/.config
 ```
+
+TODO: Change i3blocks-contrib back to mainline once https://github.com/vivien/i3blocks-contrib/pull/433
 
 ## Google Internal
 
