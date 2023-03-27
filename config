@@ -242,3 +242,11 @@ bar {
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 include /etc/sway/config.d/*
+#
+# Volume Controls:
+#
+exec_always pactl set-sink-volume 0 100%
+bindsym XF86AudioRaiseVolume exec amixer -q sset $audio_dev 5%+ && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q sset $audio_dev 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -q sset $audio_dev toggle && pkill -RTMIN+10 i3blocks
+
