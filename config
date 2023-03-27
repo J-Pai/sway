@@ -36,8 +36,7 @@ output * bg #444444 solid_color
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-exec_always pkill kanshi
-exec_always kanshi
+exec_always --no-startup-id pkill kanshi && kanshi
 
 ### Idle configuration
 #
@@ -222,11 +221,11 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 # bar {
 #     position bottom
-# 
+#
 #     # When the status_command prints a new line to stdout, swaybar updates.
 #     # The default just shows the current date and time.
 #     status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-# 
+#
 #     colors {
 #         statusline #ffffff
 #         background #323232
