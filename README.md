@@ -43,9 +43,9 @@ sudo touch /etc/sway/config.d/60-google.conf
 Add the following to the newly create `60-google.conf` file.
 
 ```shell
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
+
 exec "ssh-agent -a $SSH_AUTH_SOCK"
-exec nm-applet --indicator
-exec env XDG_CURRENT_DESKTOP=gnome /usr/share/goobuntu-indicator/goobuntu_indicator.py
 ```
 
 ## Display Configuration
