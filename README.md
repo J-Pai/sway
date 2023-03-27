@@ -10,14 +10,19 @@ sudo apt install sway swaylock swayidle
 ## Installation of Dependencies
 
 ```shell
-sudo apt install i3blocks
+sudo apt install i3blocks kanshi
+```
+
+```shell
+mkdir -p ~/.config/kanshi && touch ~/.config/kanshi/config
+ln -s ~/.config/sway/i3blocks ~/.config
 ```
 
 ## Google Internal
 
 Set up `SSH_AUTH_SOCK`.
 
-```
+```shell
 mkdir -p ~/.config/environment.d
 touch ~/.config/environment.d/envvars.conf
 
@@ -50,23 +55,23 @@ sudo apt install wdisplays
 swaymsg -t get_outputs
 ```
 
-Example config (prefer to place in platform specific config):
+Example Kanshi config (~/.config/kanshi/config)
 
 ```shell
-output "DP-3" {
-    mode 3840x2160@59.997Hz
-    pos 0 0
-    scale 1.101562
-    scale_filter linear
+profile "multiple" {
+	output eDP-1 mode 1920x1080@59.934Hz position 2560,0
+	output HDMI-A-1 mode 2560x1440@59.951Hz position 0,0
 }
 
-output "DP-4" {
-    mode 3840x2160@59.997Hz
-    pos 3485 0
-    scale 1
-    scale_filter nearest
+profile "multiple" {
+	output eDP-1 mode 1920x1080@59.934Hz position 2560,0
+	output HDMI-A-1 mode 2560x1440@59.951Hz position 0,0
 }
+```
 
-workspace 1 output "DP-3"
-workspace 2 output "DP-4"
+Workspace forcing (prefer to place in platform specific config):
+
+```shell
+workspace 1 output "HDMI-A-1" "eDP-1"
+workspace 2 output "eDP-1"
 ```
