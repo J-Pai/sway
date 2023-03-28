@@ -24,6 +24,7 @@ set $term kitty
 # 	  xargs swaymsg exec --
 set $focused_monitor "XWAYLAND$(swaymsg -t get_outputs | jq 'map(.focused) | index(true)')"
 set $menu rofi -m $focused_monitor -show run | xargs swaymsg exec --
+set $locker 'swaylock -f --color "#696969" -s fit'
 
 include /etc/sway/config-vars.d/*
 
@@ -37,7 +38,7 @@ output * bg #444444 solid_color
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-exec_always --no-startup-id pkill kanshi && kanshi
+exec_always "pkill kanshi; kanshi"
 
 ### Idle configuration
 #
@@ -102,7 +103,7 @@ exec_always --no-startup-id pkill kanshi && kanshi
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
     # Lock screen
-    bindsym $mod+Shift+x exec --no-startup-id swaylock --color "#696969" -i ~/Pictures/winders.gif -s fit
+    bindsym $mod+Shift+x exec --no-startup-id $locker
 #
 # Moving around:
 #
