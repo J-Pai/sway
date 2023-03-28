@@ -90,3 +90,9 @@ workspace 2 output "HDMI-A-1" "eDP-1"
 sudo cp ~/.config/sway/nvidia/sway-nvidia.desktop /usr/share/wayland-sessions/sway-nvidia.desktop
 sudo cp ~/.config/sway/nvidia/sway-nvidia /usr/bin/sway-nvidia
 ```
+
+## Keychron K2 Configuration
+
+Prefer to use Apple mode since Windows mode FN keys are broken.
+
+https://schnouki.net/post/2019/how-to-use-a-keychron-k2-usb-keyboard-on-linux/
