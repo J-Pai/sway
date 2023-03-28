@@ -21,15 +21,22 @@ ln -s ~/.config/sway/i3blocks ~/.config
 
 TODO: Change i3blocks-contrib back to mainline once https://github.com/vivien/i3blocks-contrib/pull/433
 
-## Google Internal
-
-Set up `SSH_AUTH_SOCK`.
+Setup other environment variables.
 
 ```shell
 mkdir -p ~/.config/environment.d
 touch ~/.config/environment.d/envvars.conf
-
 ```
+
+Add the following to `envvars.conf`.
+
+```shell
+XDG_CURRENT_DESKTOP=sway
+```
+
+## Google Internal
+
+Set up `SSH_AUTH_SOCK`.
 
 Add the following to `envvars.conf`.
 
