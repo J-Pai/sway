@@ -102,7 +102,7 @@ exec_always --no-startup-id pkill kanshi && kanshi
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
     # Lock screen
-    bindsym $mod+Shift+x exec --no-startup-id swaylock --color "#696969"
+    bindsym $mod+Shift+x exec --no-startup-id swaylock --color "#696969" -i ~/Pictures/winders.gif -s fit
 #
 # Moving around:
 #

@@ -51,16 +51,6 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSO
 exec "ssh-agent -a $SSH_AUTH_SOCK"
 ```
 
-## Volume Control
-
-Add the following to the platform specific config.
-
-Use `alsamixer` to figure out the name of `<SOURCE_CARD>`.
-
-```shell
-set $audio_dev <SOUND_CARD>
-```
-
 ## Display Configuration
 
 ```shell
