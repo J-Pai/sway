@@ -74,6 +74,6 @@ profile "internal" {
 Workspace forcing (prefer to place in platform specific config):
 
 ```shell
-workspace 1 output "HDMI-A-1" "eDP-1"
-workspace 2 output "eDP-1"
+workspace 1 output "eDP-1"
+workspace 2 output "HDMI-A-1" "eDP-1"
 ```
