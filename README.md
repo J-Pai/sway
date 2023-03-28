@@ -84,3 +84,9 @@ Workspace forcing (prefer to place in platform specific config):
 workspace 1 output "eDP-1"
 workspace 2 output "HDMI-A-1" "eDP-1"
 ```
+### Nvidia Launcher
+
+```bash
+sudo cp ~/.config/sway/nvidia/sway-nvidia.desktop /usr/share/wayland-sessions/sway-nvidia.desktop
+sudo cp ~/.config/sway/nvidia/sway-nvidia /usr/bin/sway-nvidia
+```
