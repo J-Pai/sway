@@ -10,7 +10,7 @@ sudo apt install sway swaylock swayidle
 ## Installation of Dependencies
 
 ```shell
-sudo apt install rofi i3blocks kanshi jq
+sudo apt install rofi i3blocks kanshi jq grimshot
 ```
 
 ```shell

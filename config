@@ -250,6 +250,25 @@ bar {
 #
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 
+#
+# Taking screenshots:
+#
+mode "screenshot" {
+    # All displays
+    bindsym Shift+f exec grimshot --notify copy screen - ; mode "default"
+    # Focused display
+    bindsym f exec grimshot --notify copy output - ; mode "default"
+    # Region
+    bindsym r exec grimshot --notify copy area - ; mode "default"
+    # Window
+    bindsym w exec grimshot --notify copy window - ; mode "default"
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym Print mode "screenshot"
+
 include /etc/sway/config.d/*
 #
 # Volume Controls:
