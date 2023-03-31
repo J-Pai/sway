@@ -22,8 +22,9 @@ set $term kitty
 # set $menu dmenu_path | \
 # 	  dmenu -m "$(swaymsg -t get_outputs | jq 'map(.focused) | index(true)')" | \
 # 	  xargs swaymsg exec --
-set $focused_monitor "XWAYLAND$(swaymsg -t get_outputs | jq 'map(.focused) | index(true)')"
-set $menu rofi -m $focused_monitor -show run | xargs swaymsg exec --
+# set $focused_monitor "XWAYLAND$(swaymsg -t get_outputs | jq 'map(.focused) | index(true)')"
+# set $menu rofi -m $focused_monitor -show run | xargs swaymsg exec --
+set $menu bemenu-run --list 20 --fn "Monospace 12" | xargs swaymsg exec --
 set $locker 'swaylock -f --color "#696969" -i ~/Pictures/winders.gif -s fit'
 
 include /etc/sway/config-vars.d/*
