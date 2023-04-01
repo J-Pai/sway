@@ -47,7 +47,7 @@ make clients wayland
 sudo make install
 ```
 
-## Google Internal
+## Platform Specific Modifications
 
 Set up `SSH_AUTH_SOCK`.
 
@@ -57,13 +57,13 @@ Add the following to `envvars.conf`.
 SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/ssh-agent.socket
 ```
 
-Create a `60-google.conf` file.
+Create a `60-display.conf` file.
 
 ```shell
-sudo touch /etc/sway/config.d/60-google.conf
+sudo touch /etc/sway/config.d/60-display.conf
 ```
 
-Add the following to the newly create `60-google.conf` file.
+Add the following to the newly create `60-display.conf` file.
 
 ```shell
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
@@ -91,7 +91,7 @@ profile "internal" {
 }
 ```
 
-Workspace forcing (prefer to place in platform specific config):
+Workspace forcing (prefer to place in /etc/sway/config.d/60-display.conf):
 
 ```shell
 workspace 1 output "eDP-1"
@@ -99,7 +99,7 @@ workspace 2 output "HDMI-A-1" "eDP-1"
 ```
 ### Nvidia Launcher
 
-```bash
+```shell
 sudo cp ~/.config/sway/nvidia/sway-nvidia.desktop /usr/share/wayland-sessions/sway-nvidia.desktop
 sudo cp ~/.config/sway/nvidia/sway-nvidia /usr/bin/sway-nvidia
 ```
@@ -109,3 +109,20 @@ sudo cp ~/.config/sway/nvidia/sway-nvidia /usr/bin/sway-nvidia
 Prefer to use Apple mode since Windows mode FN keys are broken.
 
 https://schnouki.net/post/2019/how-to-use-a-keychron-k2-usb-keyboard-on-linux/
+
+## Lock Applications to Workspace
+
+Prefer to place in /etc/sway/config.d/60-display.conf.
+
+Prefer to use `class` for filtering. This will ensure only the application
+(and not other applications with similar names) will be launched in the correct window
+
+Examples:
+
+```shell
+workspace 9 output "HDMI-A-1" "eDP-1"
+assign [class=".*Signal"] 9
+exec signal-desktop
+assign [class=".*steam_app_.*"] 10
+assign [class=".*factorio.*"] 10
+```
