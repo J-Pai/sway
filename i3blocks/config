@@ -96,9 +96,10 @@ min_width=CPU: 100.00%
 #
 # The battery instance defaults to 0.
 [battery]
-label=BAT
+label=BAT0
 #label=⚡
 #instance=1
+command=acpi
 interval=30
 
 # Date Time

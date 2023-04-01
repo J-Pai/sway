@@ -10,7 +10,7 @@ sudo apt install sway swaylock swayidle
 ## Installation of Dependencies
 
 ```shell
-sudo apt install i3blocks kanshi jq grimshot bemenu
+sudo apt install i3blocks kanshi jq grimshot
 ```
 
 ```shell
@@ -32,6 +32,19 @@ Add the following to `envvars.conf`.
 
 ```shell
 XDG_CURRENT_DESKTOP=sway
+```
+
+### Setup bemenu
+
+```shell
+sudo apt install scdoc wayland-protocols libcairo-dev libpango1.0-dev libxkbcommon-dev libwayland-dev
+mkdir -p ~/github && cd ~/github
+wget https://github.com/Cloudef/bemenu/releases/download/0.6.14/bemenu-0.6.14.tar.gz
+tar -xvf bemenu-0.6.14.tar.gz
+cd bemenu-0.6.14.tar.gz
+
+make clients wayland
+sudo make install
 ```
 
 ## Google Internal
