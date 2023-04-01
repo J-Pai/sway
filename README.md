@@ -61,6 +61,7 @@ Create a `60-display.conf` file.
 
 ```shell
 sudo touch /etc/sway/config.d/60-display.conf
+sudo chown ${USER} /etc/sway/config.d/60-display.conf
 ```
 
 Add the following to the newly create `60-display.conf` file.
