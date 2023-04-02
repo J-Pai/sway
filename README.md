@@ -60,8 +60,8 @@ SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/ssh-agent.socket
 Create a `60-display.conf` file.
 
 ```shell
+sudo chown ${USER} /etc/sway/config.d
 sudo touch /etc/sway/config.d/60-display.conf
-sudo chown ${USER} /etc/sway/config.d/60-display.conf
 ```
 
 Add the following to the newly create `60-display.conf` file.
@@ -127,3 +127,30 @@ exec signal-desktop
 assign [class=".*steam_app_.*"] 10
 assign [class=".*factorio.*"] 10
 ```
+
+## Games Notes
+
+### Factorio
+
+Uses Intel graphics by default. Use the following to force Nvidia.
+
+Launch Options:
+
+```shell
+env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia %command%
+```
+
+### Squad
+
+Running off a 960m (2gb VRAM) - Out of Video Memory, but does start.
+
+Launch Options:
+
+```shell
+NVIDIA: 530.30.02
+Proton: GE-Proton7-53
+
+env __NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only __GLX_VENDOR_LIBRARY_NAME=nvidia PROTON_USE_WINED3D=1 %command%
+```
+
+Needed to use WineD3D since the default would either crash or nothing would show up. WineD3D uses OpenGL for DirectX API emulation. This seems to work better with older GPUs.
