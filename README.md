@@ -7,6 +7,10 @@ Meant to be used as the default SwayWM config located at ~/.config/sway.
 sudo apt install sway swaylock swayidle mako-notifier
 ```
 
+If notifications (mako-notifier) do not work:
+
+https://github.com/emersion/mako/issues/257
+
 ## Installation of Dependencies
 
 ```shell
