@@ -20,8 +20,8 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | \
-# 	  dmenu -m "$(swaymsg -t get_outputs | jq 'map(.focused) | index(true)')" | \
-# 	  xargs swaymsg exec --
+#         dmenu -m "$(swaymsg -t get_outputs | jq 'map(.focused) | index(true)')" | \
+#         xargs swaymsg exec --
 # set $focused_monitor "XWAYLAND$(swaymsg -t get_outputs | jq 'map(.focused) | index(true)')"
 # set $menu rofi -m $focused_monitor -show run | xargs swaymsg exec --
 set $menu env LD_LIBRARY_PATH=/usr/local/lib bemenu-run --list 20 --fn "Monospace 12" | xargs swaymsg exec --
@@ -84,8 +84,8 @@ exec swayidle -w \
     }
 
     input "1133:16428:Logitech_G602" {
-    	accel_profile "flat"
-	pointer_accel 0
+        accel_profile "flat"
+        pointer_accel 0
     }
 
 ### Key bindings
