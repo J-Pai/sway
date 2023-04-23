@@ -14,16 +14,13 @@ https://github.com/emersion/mako/issues/257
 ## Installation of Dependencies
 
 ```shell
-sudo apt install i3blocks kanshi jq grimshot
+sudo apt install kanshi jq grimshot waybar
 ```
 
 ```shell
 mkdir -p ~/.config/kanshi && touch ~/.config/kanshi/config
-git clone git@github.com:J-Pai/i3blocks-contrib.git ~/.config/i3blocks-contrib
-ln -s ~/.config/sway/i3blocks ~/.config
+ln -s ~/.config/sway/waybar ~/.config
 ```
-
-TODO: Change i3blocks-contrib back to mainline once https://github.com/vivien/i3blocks-contrib/pull/433
 
 Setup other environment variables.
 
