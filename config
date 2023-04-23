@@ -85,7 +85,7 @@ exec swayidle -w \
 
     input "1133:16428:Logitech_G602" {
         accel_profile "flat"
-        pointer_accel 0
+        pointer_accel -0.1
     }
 
 ### Key bindings
