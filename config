@@ -275,7 +275,7 @@ mode "screenshot" {
 }
 bindsym Print mode "screenshot"
 # Screenshot mode for Keychron K2
-bindsym $mod+Shift+Home mode "screenshot"
+bindsym Mod4+s mode "screenshot"
 
 include /etc/sway/config.d/*
 #
