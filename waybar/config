@@ -18,12 +18,12 @@
     "cpu": {
         // "format": "{usage}% ",
         // "tooltip": false
-        "internal": 30,
+        "internal": 5,
         "format": "{max_frequency}G {usage}% {icon} ",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     },
     "memory": {
-        "internal": 30,
+        "internal": 5,
         "format": "{used:.3}/{total:.3} {}% "
     },
     "pulseaudio": {
