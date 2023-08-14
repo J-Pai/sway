@@ -5,6 +5,7 @@ Meant to be used as the default SwayWM config located at ~/.config/sway.
 
 ```shell
 sudo apt install sway swaylock swayidle mako-notifier
+sudo cp ~/.config/sway/waybar/waybar.sh /usr/bin
 ```
 
 If notifications (mako-notifier) do not work:

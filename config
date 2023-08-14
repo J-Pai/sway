@@ -247,7 +247,7 @@ bindsym $mod+r mode "resize"
 #     }
 # }
 bar {
-    swaybar_command waybar
+    swaybar_command waybar.sh
     font pango:JetBrainsMono NFM 12
 }
 
