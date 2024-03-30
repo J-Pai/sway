@@ -128,6 +128,7 @@ set $menu rofi -m $focused_monitor -show run | xargs swaymsg exec --
 # Workspaces:
 #
     # Switch to workspace
+    bindsym $mod+grave workspace ~
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
     bindsym $mod+3 workspace number 3
@@ -139,6 +140,7 @@ set $menu rofi -m $focused_monitor -show run | xargs swaymsg exec --
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
     # Move focused container to workspace
+    bindsym $mod+Shift+grave move container to workspace ~
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
     bindsym $mod+Shift+3 move container to workspace number 3
