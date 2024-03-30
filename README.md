@@ -24,7 +24,7 @@ cp -f /tmp/sway.log /tmp/sway.log.old
 env \
 WLR_RENDERER=vulkan \
 WLR_NO_HARDWARE_CURSORS=1 \
-WLR_DRM_NO_ATOMIC=1 \
+GBM_BACKEND=nvidia-drm \
 sway --unsupported-gpu -Dnoscanout -d |& tee /tmp/sway.log
 ```
 
