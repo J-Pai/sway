@@ -58,3 +58,9 @@ profile "multiple" {
 ```
 
 With Nvidia, it's recommended to disable adaptive_sync.
+
+### Setting up Waybar
+
+```
+ln -sfn ~/.config/sway/waybar ~/.config/waybar
+```
