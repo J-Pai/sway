@@ -159,7 +159,7 @@ set $menu rofi -m $focused_monitor -show run | xargs swaymsg exec --
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    bindsym $mod+shift+v splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
