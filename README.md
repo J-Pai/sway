@@ -2,7 +2,7 @@
 
 ## Registering Sway with GDM (Nvidia)
 
-/usr/share/wayland-session/sway-nvidia.desktop
+Add the following to `/usr/share/wayland-session/sway-nvidia.desktop`.
 
 ```shell
 [Desktop Entry]
@@ -12,7 +12,7 @@ Exec=sway-nvidia
 Type=Application
 ```
 
-/usr/bin/sway-nvidia
+Add the following to `/usr/bin/sway-nvidia`.
 
 ```shell
 export XDG_SESSION_TYPE=wayland
@@ -34,6 +34,34 @@ sway --unsupported-gpu -Dnoscanout -d |& tee /tmp/sway.log
 
 ```shell
 sudo dnf install waybar kanshi jq grimshot wdisplays mako
+```
+
+## Platform Specific Modifications
+
+Add the following to `~/.config/environment.d/envvars.conf`.
+
+```shell
+SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/ssh-agent.socket
+```
+
+Create a `60-display.conf` file.
+
+```shell
+sudo chown ${USER} /etc/sway/config.d
+sudo touch /etc/sway/config.d/60-display.conf
+```
+
+Add the following to the newly create `60-display.conf` file.
+
+```shell
+exec dbus-update-activation-environment \
+    --systemd WAYLAND_DISPLAY \
+    DISPLAY SWAYSOCK \
+    XDG_SESSION_TYPE=wayland \
+    XDG_CURRENT_DESKTOP=gnome \
+    XDG_SESSION_DESKTOP=sway
+
+exec "ssh-agent -a $SSH_AUTH_SOCK"
 ```
 
 ## Configuring Displays
