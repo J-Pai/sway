@@ -1,5 +1,7 @@
 # SwayWM Config
 
+![alt text](.image/waybar.png)
+
 ## Registering Sway with GDM (Nvidia)
 
 Add the following to `/usr/share/wayland-session/sway-nvidia.desktop`.
