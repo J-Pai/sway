@@ -92,6 +92,7 @@
             "car": "",
             "default": ["", "", ""]
         },
+        "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click": "gnome-control-center sound"
     },
     "disk": {
