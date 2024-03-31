@@ -21,7 +21,7 @@ set $term kitty
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu rofi -m $focused_monitor -show run | xargs swaymsg exec --
-set $lock 'swaylock -f --color "#000000" -i ~/Pictures/winders.gif -s fit'
+set $lock '~/.config/sway/scripts/locker.sh'
 
 ### Output configuration
 #
