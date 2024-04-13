@@ -120,3 +120,34 @@ button:hover {
 label:focus {
     background-color: #000000;
 }
+
+#group-power {
+    color: #ffffff;
+}
+
+#custom-quit,
+#custom-lock,
+#custom-reboot,
+#custom-power {
+    padding: 0 10px;
+}
+
+#custom-lock {
+    color: #009163;
+    border: 2px solid #009163;
+}
+
+.not-power > #custom-quit {
+    color: #ffcf00;
+    border: 2px solid #ffcf00;
+}
+
+.not-power > #custom-reboot {
+    color: #ee6123;
+    border: 2px solid #ee6123;
+}
+
+.not-power > #custom-power {
+    color: #fa003f;
+    border: 2px solid #fa003f;
+}
