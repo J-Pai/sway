@@ -79,7 +79,19 @@ set $lock '~/.config/sway/scripts/locker.sh'
 
     input "1133:16428:Logitech_G602" {
         accel_profile "flat"
-        pointer_accel -0.1
+        pointer_accel 0
+    }
+
+    # Logitech Mouse Receiver
+    input "1133:50487:Logitech_USB_Receiver" {
+        accel_profile "flat"
+        pointer_accel 0
+    }
+
+    # Logitech MX Ergo Ball Mouse
+    input "1133:45085:Logitech_MX_Ergo_Multi-Device_Trackball" {
+        accel_profile "flat"
+        pointer_accel 0
     }
 
 ### Key bindings
