@@ -27,7 +27,7 @@ env \
 WLR_NO_HARDWARE_CURSORS=1 \
 WLR_RENDERER=vulkan \
 GBM_BACKEND=nvidia-drm \
-sway --unsupported-gpu -d |& tee /tmp/sway.log
+sway --unsupported-gpu -Dnoscanout -d |& tee /tmp/sway.log
 ```
 
 ## Dependencies
