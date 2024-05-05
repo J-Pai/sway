@@ -38,6 +38,15 @@ sway --unsupported-gpu -Dnoscanout -d |& tee /tmp/sway.log
 sudo dnf install waybar kanshi jq grimshot wdisplays mako
 ```
 
+### Idle Hack
+
+swayidle does not seem to detect when browsers send inhibit idle.
+
+Using the following project to enable a service which listens for dbus events
+that prevent idling.
+
+https://github.com/loops/idlehack
+
 ## Platform Specific Modifications
 
 Add the following to `~/.config/environment.d/envvars.conf`.
