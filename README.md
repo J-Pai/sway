@@ -81,6 +81,14 @@ for_window [class=".*gta5.*"] move to workspace 5
 for_window [class=".*steam_app_.*"] move to workspace 5
 for_window [class=".*factorio.*"] move to workspace 5
 for_window [app_id=".*factorio.*"] move to workspace 5
+
+output HEADLESS-1 {
+    pos 0,3000
+    mode 1920x1080
+    adaptive_sync off
+}
+
+workspace headless output HEADLESS-1
 ```
 
 ## Configuring Displays
@@ -98,13 +106,54 @@ Example Kanshi config:
 ~/.config/kanshi/config
 
 ```shell
-profile "multiple" {
-    output DP-4 mode 2560x1440@59.951Hz position 0,0 adaptive_sync off
-    output DP-5 mode 2560x1440@59.951Hz position 0,1440 adaptive_sync off
+profile multiple {
+    output DP-1 mode 3840x2160 enable position 0,400 adaptive_sync off
+    output DP-2 mode 2560x1440 enable position 3840,0 transform 270 adaptive_sync off
+}
+
+profile multiple-headless {
+    output DP-1 mode 3840x2160 enable position 0,400 adaptive_sync off
+    output DP-2 mode 2560x1440 enable position 3840,0 transform 270 adaptive_sync off
+    output HEADLESS-1 mode 1920x1080 enable position 0,3000 adaptive_sync off
+}
+
+profile multiple-headless-off {
+    output DP-1 mode 3840x2160 enable position 0,400 adaptive_sync off
+    output DP-2 mode 2560x1440 enable position 3840,0 transform 270 adaptive_sync off
+    output HEADLESS-1 mode 1920x1080 disable
+}
+
+profile secondary {
+    output DP-1 mode 3840x2160 disable
+    output DP-2 mode 2560x1440 enable position 3840,0 transform 270 adaptive_sync off
+}
+
+profile secondary-headless {
+    output DP-1 mode 3840x2160 disable
+    output DP-2 mode 2560x1440 enable position 3840,0 transform 270 adaptive_sync off
+    output HEADLESS-1 mode 1920x1080 enable position 0,3000 adaptive_sync off
+}
+
+profile secondary-headless-off {
+    output DP-1 mode 3840x2160 disable
+    output DP-2 mode 2560x1440 enable position 3840,0 transform 270 adaptive_sync off
+    output HEADLESS-1 mode 1920x1080 disable
 }
 ```
 
 With Nvidia, it's recommended to disable adaptive_sync.
+
+### Launching a headless window
+
+```
+swaymsg create_output HEADLESS-1
+```
+
+Moving windows to a headless workspace.
+
+```
+swaymsg [class="steam"] move to workspace headless
+```
 
 ### Setting up Waybar
 
