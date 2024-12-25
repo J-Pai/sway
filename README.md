@@ -35,7 +35,7 @@ sway --unsupported-gpu -Dnoscanout -d |& tee /tmp/sway.log
 ### Fedora
 
 ```shell
-sudo dnf install waybar kanshi jq grimshot wdisplays mako
+sudo dnf install waybar kanshi jq grimshot wdisplays mako lxqt-policykit
 ```
 
 ### Idle Hack
@@ -58,21 +58,29 @@ SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/ssh-agent.socket
 Create a `60-display.conf` file.
 
 ```shell
-sudo chown ${USER} /etc/sway/config.d
-sudo touch /etc/sway/config.d/60-display.conf
+touch ~/.config/sway/config.d/60-display.conf
 ```
+
+Use the following as an example for "system" sepcific configuration.
 
 Add the following to the newly create `60-display.conf` file.
 
 ```shell
-exec dbus-update-activation-environment \
-    --systemd WAYLAND_DISPLAY \
-    DISPLAY SWAYSOCK \
-    XDG_SESSION_TYPE=wayland \
-    XDG_CURRENT_DESKTOP=gnome \
-    XDG_SESSION_DESKTOP=sway
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 
-exec "ssh-agent -a $SSH_AUTH_SOCK"
+workspace 1 output DP-1
+workspace ~ output DP-2
+
+assign [title=".*Signal"] ~
+exec signal-desktop
+assign [title=".*Discord"] ~
+
+for_window [title=".*Default - Wine desktop.*"] move to workspace 5
+for_window [class=".*gta5.*"] move to workspace 5
+for_window [class=".*steam_app_.*"] move to workspace 5
+for_window [class=".*factorio.*"] move to workspace 5
+for_window [app_id=".*factorio.*"] move to workspace 5
 ```
 
 ## Configuring Displays
