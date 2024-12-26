@@ -308,4 +308,5 @@ include /usr/share/sway/config.d/50-rules-policykit-agent.conf
 include /usr/share/sway/config.d/95-autostart-policykit-agent.conf
 include /usr/share/sway/config.d/95-xdg-desktop-autostart.conf
 include /usr/share/sway/config.d/95-xdg-user-dirs.conf
-include '$(/usr/libexec/sway/layered-include "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
+include /etc/sway/config.d/*.conf
+include ${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf
