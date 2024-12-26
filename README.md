@@ -35,7 +35,14 @@ sway --unsupported-gpu -Dnoscanout -d |& tee /tmp/sway.log
 ### Fedora
 
 ```shell
-sudo dnf install waybar kanshi jq grimshot wdisplays mako lxqt-policykit
+sudo dnf install waybar \
+    kanshi \
+    jq \
+    grimshot \
+    wdisplays \
+    mako \
+    lxqt-policykit \
+    qpwgraph
 ```
 
 ### Idle Hack
