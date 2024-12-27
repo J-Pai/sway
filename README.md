@@ -47,12 +47,26 @@ sudo dnf install waybar \
 
 ### Idle Hack
 
+NOTE: This might no longer be necessary.
+
 swayidle does not seem to detect when browsers send inhibit idle.
 
 Using the following project to enable a service which listens for dbus events
 that prevent idling.
 
 https://github.com/loops/idlehack
+
+### Support Multi-Monitor Login with GDM
+
+Download the zip for https://github.com/derflocki/multi-monitor-login?tab=readme-ov-file.
+
+```
+sudo mv ~/Downloads/multi-monitor-login-main.zip /opt
+sudo machinectl shell gdm@ /bin/bash
+dconf reset -f /
+gnome-extensions install /opt/multi-monitor-login-main.zip
+gsettings set org.gnome.shell enabled-extensions "['multi-monitor-login@derflocki.github.com']"
+```
 
 ## Platform Specific Modifications
 
