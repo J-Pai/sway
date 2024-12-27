@@ -84,7 +84,7 @@ set $menu rofi -m $focused_monitor -show run | xargs swaymsg exec --
     # Logitech Mouse Receiver
     input "1133:50487:Logitech_USB_Receiver" {
         accel_profile "flat"
-        pointer_accel 0
+        pointer_accel 0.3
     }
 
     # Logitech MX Ergo Ball Mouse
