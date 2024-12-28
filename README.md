@@ -130,34 +130,60 @@ Example Kanshi config:
 profile multiple {
     output DP-1 mode 3840x2160 enable position 0,400 adaptive_sync off
     output DP-2 mode 2560x1440 enable position 3840,0 transform 270 adaptive_sync off
+    output HDMI-A-1 mode 1280x720 disable
 }
 
 profile multiple-headless {
     output DP-1 mode 3840x2160 enable position 0,400 adaptive_sync off
     output DP-2 mode 2560x1440 enable position 3840,0 transform 270 adaptive_sync off
+    output HDMI-A-1 mode 1280x720 disable
     output HEADLESS-1 mode 1920x1080 enable position 0,3000 adaptive_sync off
 }
 
 profile multiple-headless-off {
     output DP-1 mode 3840x2160 enable position 0,400 adaptive_sync off
     output DP-2 mode 2560x1440 enable position 3840,0 transform 270 adaptive_sync off
+    output HDMI-A-1 mode 1280x720 disable
     output HEADLESS-1 mode 1920x1080 disable
 }
 
 profile secondary {
     output DP-1 mode 3840x2160 disable
     output DP-2 mode 2560x1440 enable position 3840,0 transform 270 adaptive_sync off
+    output HDMI-A-1 mode 1280x720 disable
 }
 
 profile secondary-headless {
     output DP-1 mode 3840x2160 disable
     output DP-2 mode 2560x1440 enable position 3840,0 transform 270 adaptive_sync off
+    output HDMI-A-1 mode 1280x720 disable
     output HEADLESS-1 mode 1920x1080 enable position 0,3000 adaptive_sync off
 }
 
 profile secondary-headless-off {
     output DP-1 mode 3840x2160 disable
     output DP-2 mode 2560x1440 enable position 3840,0 transform 270 adaptive_sync off
+    output HDMI-A-1 mode 1280x720 disable
+    output HEADLESS-1 mode 1920x1080 disable
+}
+
+profile kvm {
+    output DP-1 mode 3840x2160 disable
+    output DP-2 mode 2560x1440 disable
+    output HDMI-A-1 mode 1280x720 enable position 0,6000 adaptive_sync off
+}
+
+profile kvm-headless {
+    output DP-1 mode 3840x2160 disable
+    output DP-2 mode 2560x1440 disable
+    output HDMI-A-1 mode 1280x720 enable position 0,6000 adaptive_sync off
+    output HEADLESS-1 mode 1920x1080 enable position 0,3000 adaptive_sync off
+}
+
+profile kvm-headless-off {
+    output DP-1 mode 3840x2160 disable
+    output DP-2 mode 2560x1440 disable
+    output HDMI-A-1 mode 1280x720 enable position 0,6000 adaptive_sync off
     output HEADLESS-1 mode 1920x1080 disable
 }
 ```
