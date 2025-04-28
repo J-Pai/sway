@@ -2,7 +2,7 @@
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
-# Read `man 5 sway` for a complete reference.
+# Read `man 5 sway` for a complete reference
 
 ### Variables
 #
@@ -20,7 +20,7 @@ set $term kitty
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu rofi -m $focused_monitor -show run | xargs swaymsg exec --
+set $menu rofi -m "$(swaymsg -t get_outputs --raw | jq '. | map(select(.focused == true)) | .[0].name' -r)"  -show run | xargs swaymsg exec --
 
 ### Idle configuration
 #

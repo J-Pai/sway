@@ -2,9 +2,41 @@
 
 ![alt text](.image/waybar.png)
 
+## General Environment Setup
+
+```shell
+mkdir -p ~/.config/environment.d
+touch ~/.config/environment.d/envvars.conf
+sudo touch /usr/share/wayland-sessions/sway-env.desktop
+sudo touch /usr/bin/sway-env
+sudo chmod +x /usr/bin/sway-env
+```
+
+Add the following to `/usr/share/wayland-sessions/sway-env.desktop`.
+
+```shell
+[Desktop Entry]
+Name=Sway (env)
+Comment=An i3-compatible Wayland compositor
+Exec=sway-env
+Type=Application
+```
+
+Add the following to `/usr/bin/sway-env`.
+
+```shell
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=sway
+export XDG_CURRENT_DESKTOP=gnome
+
+sway
+```
+
+Add the following to `/usr/share/wayland-sessions/sway-env.desktop`.
+
 ## Registering Sway with GDM (Nvidia)
 
-Add the following to `/usr/share/wayland-session/sway-nvidia.desktop`.
+Add the following to `/usr/share/wayland-sessions/sway-env.desktop`.
 
 ```shell
 [Desktop Entry]
@@ -17,10 +49,6 @@ Type=Application
 Add the following to `/usr/bin/sway-nvidia`.
 
 ```shell
-export XDG_SESSION_TYPE=wayland
-export XDG_SESSION_DESKTOP=sway
-export XDG_CURRENT_DESKTOP=gnome
-
 cp -f /tmp/sway.log /tmp/sway.log.old
 
 env \
@@ -36,6 +64,7 @@ sway --unsupported-gpu -Dnoscanout -d |& tee /tmp/sway.log
 
 ```shell
 sudo dnf install waybar \
+    rofi \
     kanshi \
     jq \
     grimshot \
