@@ -64,6 +64,7 @@ sway --unsupported-gpu -Dnoscanout -d |& tee /tmp/sway.log
 
 ```shell
 sudo dnf install waybar \
+    pgrep \
     rofi \
     kanshi \
     jq \
@@ -95,6 +96,28 @@ sudo machinectl shell gdm@ /bin/bash
 dconf reset -f /
 gnome-extensions install /opt/multi-monitor-login-main.zip
 gsettings set org.gnome.shell enabled-extensions "['multi-monitor-login@derflocki.github.com']"
+```
+
+## Disabling Logitech c930e Webcam Microphone
+
+Identify idVendor and idProduct.
+
+```shell
+lsusb | grep "Logitech"
+```
+
+Create/update `/etc/udev/rules.d/90-block-logitech-sound.rules`.
+
+```shell
+# Block Logitech c930e Webcam Microphone
+SUBSYSTEM=="usb", DRIVER=="snd-usb-audio", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0843", ATTR{authorized}="0"
+```
+
+Reload udev rules.
+
+```
+sudo udevadm control --reload-rules
+sudo udevadm trigger
 ```
 
 ## Platform Specific Modifications
@@ -221,18 +244,18 @@ With Nvidia, it's recommended to disable adaptive_sync.
 
 ### Launching a headless window
 
-```
+```shell
 swaymsg create_output HEADLESS-1
 ```
 
 Moving windows to a headless workspace.
 
-```
+```shell
 swaymsg [class="steam"] move to workspace headless
 ```
 
 ### Setting up Waybar
 
-```
+```shell
 ln -sfn ~/.config/sway/waybar ~/.config/waybar
 ```
