@@ -8,7 +8,7 @@
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": [],
     "modules-right": [
-        "keyboard-state",
+        // "keyboard-state",
         "idle_inhibitor",
         "pulseaudio",
         "network",
