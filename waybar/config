@@ -105,7 +105,7 @@
             "default": ["", "", ""]
         },
         "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click": "gnome-control-center sound"
+        "on-click": "~/.config/waybar/bin/gnome-control-center sound"
     },
     "disk": {
         "interval": 30,
