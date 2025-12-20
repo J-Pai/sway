@@ -259,3 +259,15 @@ swaymsg [class="steam"] move to workspace headless
 ```shell
 ln -sfn ~/.config/sway/waybar ~/.config/waybar
 ```
+
+## Other Notes
+
+Steam launch options:
+
+```bash
+gamescope -f --mangoapp -- %command%
+obs-gamecapture %command%
+env OBS_VKCAPTURE=1 %command%
+mangohud %command%
+LD_PRELOAD="" VK_LOADER_LAYERS_ENABLE=VK_LAYER_MANGOHUD_overlay_x86_64 mangohud %command%
+```

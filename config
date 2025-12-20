@@ -40,9 +40,9 @@ set $menu rofi -m "$(swaymsg -t get_outputs --raw | jq '. | map(select(.focused 
     set $lock '~/.config/sway/scripts/locker.sh'
     exec swayidle -w \
             timeout 300 $lock \
-            timeout 315 'swaymsg "output * power off"' \
-            timeout 15 'if pgrep -x swaylock; then swaymsg "output * power off"; fi' \
-            resume 'swaymsg "output * power on"' \
+            timeout 315 '$lock screen_off' \
+            timeout 15 '$lock screen_off_if_locked' \
+            resume '$lock screen_on' \
             before-sleep $lock
 
 ### Input configuration
