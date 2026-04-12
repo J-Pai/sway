@@ -24,6 +24,7 @@ set $term kitty
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu rofi -m "$(swaymsg -t get_outputs --raw | jq '. | map(select(.focused == true)) | .[0].name' -r)"  -show run | xargs swaymsg exec --
+set $pctl playerctl -p playerctld
 
 ### Idle configuration
 #
@@ -219,6 +220,10 @@ set $menu rofi -m "$(swaymsg -t get_outputs --raw | jq '. | map(select(.focused 
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1% && pkill -RTMIN+10 i3blocks
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1% && pkill -RTMIN+10 i3blocks
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks
+    bindsym XF86AudioPrev exec --no-startup-id $pctl previous
+    bindsym XF86AudioNext exec --no-startup-id $pctl next
+    bindsym XF86AudioPlay exec --no-startup-id $pctl play-pause
+
 #
 # Power Buttons:
 #
